@@ -1,0 +1,14 @@
+name: Issue Opened
+on:
+    issues:
+        types:
+            - opened
+jobs:
+    print-issue:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo issue details
+              run: |
+                echo "${{ github.event.issue.number }}"
+                echo "${{ github.event.issue.title }}"
+                echo "${{ github.event.issue.body }}"
